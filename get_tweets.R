@@ -1,9 +1,10 @@
 
-get_tweets <- function(word) {
+get_tweets <- function(keyword) {
 
   library(twitteR)
   library(dplyr)
   library(purrr)
+  library(tidytext)
   
   api_key <- "kDhE1qt5Yud7aBaXVCaKN6Zma"
   api_secret <- "Hd3yLQ3W9OxZO2nwFtgq92EGfzLhMwZ4y67dCbmhD68y98C74u"
@@ -12,9 +13,10 @@ get_tweets <- function(word) {
   
   setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
   
-  tweets <- searchTwitter(word, n = 1000)
+  tweets <- searchTwitter(keyword, n = 1000)
   df <- tbl_df(map_df(tweets, as.data.frame))
-  write.csv(df, paste(word, ".csv", sep = ""))
+  
+  write.csv(df, paste(keyword, "_tweets.csv", sep = ""))
 }
 
 
