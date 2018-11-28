@@ -1,6 +1,8 @@
 
 get_tweets <- function(keyword) {
 
+  install.packages("twitteR")
+  install.packages("purrr")
   library(twitteR)
   library(dplyr)
   library(purrr)
