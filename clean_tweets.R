@@ -5,5 +5,5 @@ clean_tweets <- function(file) {
   tweets <- read.csv("coffee_tweets.csv")
   tweets <- select(tweets, text)
   tweets_clean <- gsub("\\d","", tweets[,1])
-  tweets_clean <- gsub("\\#", "", tweets[,1]) 
+  tweets_clean <- gsub("\\#", "", tweets_clean) 
 }
