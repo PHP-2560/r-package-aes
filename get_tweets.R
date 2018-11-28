@@ -13,7 +13,7 @@ get_tweets <- function(keyword) {
   
   setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
   
-  tweets <- searchTwitter(keyword, n = 1000)
+  tweets <- searchTwitter(keyword, n = 1000, lang = "en")
   df <- tbl_df(map_df(tweets, as.data.frame))
   
   write.csv(df, paste(keyword, "_tweets.csv", sep = ""))
