@@ -1,4 +1,11 @@
-
+#' Getting Tweets
+#'
+#' This function allows you to save tweets that contain a given keyword in a .csv file.
+#' @param keyword A string that is the keyword included in tweets
+#' @keywords tweets
+#' @export
+#' @examples
+#' get_tweets()
 get_tweets <- function(keyword) {
 
   install.packages("twitteR")

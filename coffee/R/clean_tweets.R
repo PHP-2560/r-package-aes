@@ -5,7 +5,7 @@
 #' @keywords tweets
 #' @export
 #' @examples
-#' ck()
+#' clean_tweets()
 clean_tweets <- function(file) {
   
   library(stringr)
