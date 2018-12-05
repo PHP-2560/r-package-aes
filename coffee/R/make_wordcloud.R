@@ -11,8 +11,8 @@ make_wordcloud <- function(file, num_words = 100) {
   library(tm)
   library(SnowballC)
   library(wordcloud)
-  words <- read.csv("clean_starbucks_tweets.csv")
+  words <- read.csv("clean_coffee_tweets.csv")
   corpus <- Corpus(VectorSource(words$x))
-  
-  wordcloud(corpus, max.words = 100)
+  words <- tm_map(corpus, removeWords, stopwords("english"))
+  wordcloud(words, max.words=200, random.order = FALSE, random_color=FALSE)
 }
