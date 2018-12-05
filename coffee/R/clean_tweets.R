@@ -1,4 +1,11 @@
-
+#' Cleaning Tweets
+#'
+#' This function allows you to clean tweets given a .csv file of tweets.
+#' @param file A string that is the name of a .csv file of tweets
+#' @keywords tweets
+#' @export
+#' @examples
+#' ck()
 clean_tweets <- function(file) {
   
   library(stringr)
