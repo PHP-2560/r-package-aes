@@ -1,7 +1,7 @@
 Package: coffee
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: c(person("Erin", "Bugbee", email = "erin_bugbee@brown.edu", role = c("aut", "cre")), person("Sarah", "Fringer", email = "sarah_fringer@brown.edu", role = c("aut", "cre")), person("Amy", "Liu", email = "amy_liu@brown.edu", role = c("aut", "cre"))) 
+Authors@R: c(person("Erin", "Bugbee", email = "erin_bugbee@brown.edu", role = c("aut", "cre")), person("Sarah", "Fringer", email = "sarah_fringer@brown.edu", role = c("aut")), person("Amy", "Liu", email = "amy_liu@brown.edu")) 
 Description: What the package does (one paragraph).
 Depends: R (>= 3.4.1)
 License: What license is it under?
