@@ -3,3 +3,4 @@
 export(cat_function)
 export(clean_tweets)
 export(get_tweets)
+export(make_wordcloud)
