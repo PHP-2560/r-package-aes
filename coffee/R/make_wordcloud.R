@@ -14,5 +14,5 @@ make_wordcloud <- function(file, num_words = 100) {
   words <- read.csv(file)
   corpus <- Corpus(VectorSource(words$x))
   words <- tm_map(corpus, removeWords, stopwords("english"))
-  wordcloud(words, max.words=200, random.order = FALSE, random_color=FALSE)
+  wordcloud(words, max.words=200, random.order = FALSE, random.color=FALSE)
 }
