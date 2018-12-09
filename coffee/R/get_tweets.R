@@ -8,15 +8,11 @@
 #' @examples
 #' get_tweets()
 
-source("check_packages.R")
-check_packages(c("twitteR","dplyr","purrr","tidytext"))
 
 get_tweets <- function(keyword, num_tweets = 1000) {
 
-  library(twitteR)
-  library(dplyr)
-  library(purrr)
-  library(tidytext)
+  source("check_packages.R")
+  check_packages(c("twitteR", "dplyr", "purrr", "tidytext"))
   
   #Authentication information
   api_key <- "kDhE1qt5Yud7aBaXVCaKN6Zma"
