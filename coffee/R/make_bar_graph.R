@@ -1,4 +1,11 @@
-
+#' Making a Bar Graph
+#'
+#' This function allows you to make a bar graph given a .csv file.
+#' @param file A .csv file
+#' @keywords bargraph
+#' @export
+#' @examples
+#' make_bar_graph()
 make_bar_graph <- function(file) {
   
   tweets_tidy <- file %>%
