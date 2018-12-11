@@ -4,7 +4,7 @@
 \alias{get_tweets}
 \title{Getting Tweets}
 \usage{
-get_tweets(keyword, num_tweets = 1000)
+get_tweets(keyword, num_tweets = 500)
 }
 \arguments{
 \item{keyword}{A string that is the keyword included in tweets}

@@ -3,4 +3,5 @@
 export(cat_function)
 export(clean_tweets)
 export(get_tweets)
+export(make_bar_graph)
 export(make_wordcloud)

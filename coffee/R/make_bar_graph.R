@@ -6,8 +6,11 @@
 #' @export
 #' @examples
 #' make_bar_graph()
+#' 
+
 make_bar_graph <- function(file) {
-  
+  library(tidytext)
+  library(ggplot2)
   tweets_tidy <- file %>%
     unnest_tokens(word, x) %>% #Break the tweets into individual words
     filter(!nchar(word) < 3) %>% 
