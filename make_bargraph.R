@@ -13,10 +13,10 @@ make_wordcloud <- function(file) {
   library(tidytext)
   
   options(stringsAsFactors = FALSE)
-  tweets <- read.csv(file)
+  tweets <- read.csv("clean_sarah_tweets.csv")
   # get a list of words
   tweet_words <- tweets %>%
-    dplyr::select(word) %>%
+    dplyr::select(x) %>%
     unnest_tokens(word, x)
   
   # plot the top 15 words

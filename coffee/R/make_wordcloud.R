@@ -16,3 +16,4 @@ make_wordcloud <- function(file, num_words = 100) {
   words <- tm_map(corpus, removeWords, stopwords("english"))
   wordcloud(words, max.words=200, random.order = FALSE, random.color=FALSE)
 }
+
