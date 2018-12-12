@@ -12,7 +12,7 @@
 get_tweets <- function(keyword, num_tweets = 500) {
 
   source("check_packages.R")
-  check_packages(c("twitteR", "dplyr", "purrr", "tidytext"))
+  check_packages(c("twitteR", "dplyr", "purrr", "tidytext", "ROAuth", "httpuv", "openssl"))
   
   #Authentication information
   api_key <- "kDhE1qt5Yud7aBaXVCaKN6Zma"
@@ -22,6 +22,7 @@ get_tweets <- function(keyword, num_tweets = 500) {
   
   #Setup authentication
   setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
+  options(httr_oauth_cache = TRUE)
   
   #Search for keyword
   tweets <- searchTwitter(keyword, n = num_tweets, lang = "en")
