@@ -18,7 +18,7 @@ make_bar_graph <- function(file) {
   tweets_bing <- tt %>%
     inner_join(get_sentiments("bing"))
   
-  tweets_bing %>%
+  bing_plot <- tweets_bing %>%
     group_by(sentiment) %>%
     summarise(word_count = n()) %>%
     ungroup() %>%
@@ -32,4 +32,5 @@ make_bar_graph <- function(file) {
     ggtitle("Tweets Sentiment") +
     coord_flip()
   
+  plot(bing_plot)
 }
