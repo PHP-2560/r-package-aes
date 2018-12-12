@@ -2,7 +2,7 @@
 % Please edit documentation in R/make_cat_graph.R
 \name{make_cat_graph}
 \alias{make_cat_graph}
-\title{Making a Category Graph for Emotions}
+\title{Making a Bar Graph for each Sentiment.}
 \usage{
 make_cat_graph(file)
 }
@@ -10,7 +10,7 @@ make_cat_graph(file)
 \item{file}{A .csv file}
 }
 \description{
-This function allows you to make a bar graph given a .csv file.
+This function allows you to analyze word counts that contribute to each sentiment.
 }
 \examples{
 make_cat_graph()
