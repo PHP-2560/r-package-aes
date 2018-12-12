@@ -8,15 +8,13 @@
 #' make_bar_graph()
 #' 
 
-make_bar_graph <- function(file) {
+make_bar_graph1 <- function(file) {
   library(tidytext)
   library(ggplot2)
-  tweets_tidy <- file %>%
-    unnest_tokens(word, x) %>% #Break the tweets into individual words
-    filter(!nchar(word) < 3) %>% 
-    anti_join(stop_words)
+  tweets_tidy <- unnest_tokens(readr::read_csv(file), word, x)
+  tt <- tweets_tidy %>% filter(!nchar(word) < 3) %>% anti_join(stop_words)
   
-  tweets_bing <- tweets_tidy %>%
+  tweets_bing <- tt %>%
     inner_join(get_sentiments("bing"))
   
   bing_plot <- tweets_bing %>%
@@ -33,5 +31,5 @@ make_bar_graph <- function(file) {
     ggtitle("Tweets NRC Sentiment") +
     coord_flip()
   
-  plot(nrc_plot)
+  plot(bing_plot)
 }
