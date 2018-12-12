@@ -8,7 +8,7 @@
 #' make_bar_graph()
 #' 
 
-make_bar_graph1 <- function(file) {
+make_bar_graph <- function(file) {
   library(tidytext)
   library(ggplot2)
   tweets_tidy <- unnest_tokens(readr::read_csv(file), word, x)
