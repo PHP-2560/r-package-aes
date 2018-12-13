@@ -15,5 +15,6 @@ make_wordcloud <- function(file, num_words = 100) {
   words <- tweets %>% count(word, sort=TRUE)
   words <- words %>% anti_join(stop_words)
   wordcloud2(data=words[0:num_words+1,], color = "random-light")
+  
 }
   
