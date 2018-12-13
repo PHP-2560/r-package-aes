@@ -14,7 +14,7 @@ make_wordcloud <- function(file, num_words = 100) {
   tweets <- unnest_tokens(readr::read_csv(file), word, x)
   words <- tweets %>% count(word, sort=TRUE)
   words <- words %>% anti_join(stop_words)
-  wordcloud2(data=words[0:num_words+1,], color = "random-light",size=0.5)
+  wordcloud2(data=words[0:num_words,], color = "random-light",size=1)
   
 }
   
