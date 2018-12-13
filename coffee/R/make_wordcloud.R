@@ -11,10 +11,10 @@ make_wordcloud <- function(file, num_words = 100) {
   library(tm)
   library(SnowballC)
   library(wordcloud2)
+  library(wordcloud)
   tweets <- unnest_tokens(readr::read_csv(file), word, x)
   words <- tweets %>% count(word, sort=TRUE)
   words <- words %>% anti_join(stop_words)
-  words <- tm_map(corpus, removeWords, stopwords("english"))
-  wordcloud2(data=words[1:num_word,], color = "random-light", gridSize=10, size=1.6)
+  wordcloud2(data=words[1:100,], color = "random-light", gridSize=10, size=1.6)
 }
 
