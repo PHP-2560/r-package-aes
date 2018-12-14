@@ -1,7 +1,7 @@
 ---
 title: "Coffee Package"
 author: "Erin Bugbee, Sarah Fringer, Amy Liu"
-date: "`r Sys.Date()`"
+date: "December 16, 2018"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Coffee Vignette}
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 > "Twitter is what’s happening in the world and what people are talking about right now."  
 - twitter.com
 
-To view Twitter, visit <https://about.twitter.com/>
+To view Twitter, visit <https://twitter.com/>
 
 This package contains functions that allows users to scrape twitter data and conduct sentiment analysis of the tweets on different coffee shops. 
 
@@ -40,8 +40,10 @@ This function allows users to save tweets that contain a specified keyword into 
 
 The get_tweets() function takes in two arguments, the keyword and the number of tweets. The default number of tweets saved is 500.  
 
-In the example image below, the user has searched for the keyword "starbucks" and this is the output .csv file. 
-```{r, out.width = "1020px", echo=FALSE}
+*In the example image below, the user has searched for the keyword "starbucks" and this is the output .csv file.*
+
+```get_tweets("starbucks")```
+```{r, out.width = "600px", echo=FALSE}
 knitr::include_graphics("uncleantweets.png")
 ```
 
@@ -52,71 +54,46 @@ Cleaning the tweets includes removing numbers, hashtags, urls, "RT"'s, twitter u
 
 The clean_tweets() function take in one argument, the .csv file created from get_tweets(). 
 
-In the example image below, the user has cleaned the starbucks_tweets.csv and this is the output file. 
+*In the example image below, the user has cleaned the starbucks_tweets.csv and this is the output file.*
+
+```clean_tweets("starbucks_tweets.csv")```
+```{r, out.width = "600px", echo=FALSE}
+knitr::include_graphics("cleantweets.png")
+```
 
 ## Sentiment Analysis Visualizations 
 
 ### 3) make_wordcloud
-_A wordcloud is used to highlight popular words based on the frequency of use and prominence in the tweets._
+A wordcloud is used to highlight popular words based on the frequency of use and prominence in the tweets.
 
 This function allows users to make a word cloud given a .csv file from the clean_tweets() function. 
 
 The make_wordcloud() function takes in two arguments, the clean .csv file and the number of words included in the word cloud. 
 
 ### 4) make_bar_graph
+This bar graph shows how many words in the tweets are "positive" and how many are "negative" from the given .csv file 
+
 This function allows users to make a sentiment bar graph given a .csv file from the clean_tweets() function. 
 
-The make_bar_graph() function takes in one argument, the clean .csv file. 
+The make_bar_graph() function takes in one argument, the clean .csv file.
+
+*In the example image below, the user has made a overall tweets sentiment bar graph from the clean_starbucks_tweets.csv and this is the output file.*
+
+```make_bar_graph("clean_starbucks_tweets.csv")```
+```{r, out.width = "600px", echo=FALSE}
+knitr::include_graphics("bargraph.png")
+```
 
 ### 5) make_cat_graph 
+For each emotion, the graphs display the words in the tweets and how much they contribute to that specific emotion.
+
 This function allows users to make emotional categorical bar graphs given a .csv file from the clean_tweets() function. 
 
-The make_cat_graph() function takes in one argument, the clean .csv file. 
+The make_cat_graph() function takes in one argument, the clean .csv file.
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+*In the example image below, the user has made emotional categorical bar graphs from the clean_starbucks_tweets.csv and this is the output file.*
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```make_cat_graph("clean_starbucks_tweets.csv")```
+```{r, out.width = "600px", echo=FALSE}
+knitr::include_graphics("catgraph.png")
 ```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
