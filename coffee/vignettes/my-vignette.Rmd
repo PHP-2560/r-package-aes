@@ -41,6 +41,9 @@ This function allows users to save tweets that contain a specified keyword into 
 The get_tweets() function takes in two arguments, the keyword and the number of tweets. The default number of tweets saved is 500.  
 
 In the example image below, the user has searched for the keyword "starbucks" and this is the output .csv file. 
+```{r, out.width = "1020px", echo=FALSE}
+knitr::include_graphics("uncleantweets.png")
+```
 
 ### 2) clean_tweets
 This function allows users to clean tweets from the .csv file previously saved from the get_tweets() function and then save these cleaned tweets into a new file named clean_keyword_tweets.csv.
@@ -48,6 +51,8 @@ This function allows users to clean tweets from the .csv file previously saved f
 Cleaning the tweets includes removing numbers, hashtags, urls, "RT"'s, twitter usernames, punctuation, emojis, new lines, and leading and trailing white space. It also makes all the tweets lowercase. 
 
 The clean_tweets() function take in one argument, the .csv file created from get_tweets(). 
+
+In the example image below, the user has cleaned the starbucks_tweets.csv and this is the output file. 
 
 ## Sentiment Analysis Visualizations 
 
