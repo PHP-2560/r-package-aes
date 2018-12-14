@@ -16,7 +16,7 @@ make_cat_graph <- function(file) {
     ungroup()
   tweets_tidy1 %>%
     group_by(sentiment) %>%
-    top_n(10) %>%
+    top_n(8) %>%
     ggplot(aes(reorder(word, n), n, fill = sentiment)) +
     geom_bar(alpha = 0.8, stat = "identity", show.legend = FALSE) +
     facet_wrap(~sentiment, scales = "free_y", nrow=2) +
