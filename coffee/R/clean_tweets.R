@@ -33,6 +33,6 @@ clean_tweets <- function(file) {
   tweets_clean <- str_trim(tweets_clean, "left")
   #Remove trailing whitespace
   tweets_clean <- str_trim(tweets_clean, "right")
-  
+  #Write the data frame to a .csv file titled "clean_keyword_tweets.csv"
   write.csv(tweets_clean, paste("clean_", file, sep = ""))
 }
