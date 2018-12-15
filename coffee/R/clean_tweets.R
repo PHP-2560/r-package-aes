@@ -3,7 +3,7 @@
 #' This function allows you to clean tweets given a .csv file of tweets.
 #' @param file A string that is the name of a .csv file of tweets
 #' @keywords tweets
-#' @export clean_keyword_tweets.csv A .csv file of clean tweets
+#' @export
 #' @examples
 #' clean_tweets()
 clean_tweets <- function(file) {

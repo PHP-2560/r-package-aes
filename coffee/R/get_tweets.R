@@ -4,7 +4,7 @@
 #' @param keyword A string that is the keyword included in tweets
 #' @param num_tweets The number of tweets to get, default is 500
 #' @keywords tweets
-#' @export keyword_tweets.csv A .csv of tweets containing the keyword
+#' @export
 #' @examples
 #' get_tweets()
 
