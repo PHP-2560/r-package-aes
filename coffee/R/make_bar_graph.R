@@ -9,15 +9,18 @@
 #' 
 
 make_bar_graph <- function(file) {
-  library(tidytext)
-  library(ggplot2)
-  library(dplyr)
+  source("check_packages.R")
+  check_packages(c("tidytext", "ggplot2", "dplyr"))
+  
   tweets_tidy <- unnest_tokens(readr::read_csv(file), word, x)
+  #Remove stop words and words shorter than 3 characters
   tt <- tweets_tidy %>% filter(!nchar(word) < 3) %>% anti_join(stop_words)
   
+  #Inner join words with positive and negative sentiments
   tweets_bing <- tt %>%
     inner_join(get_sentiments("bing"))
   
+  #Plot the number of positive and negative words
   bing_plot <- tweets_bing %>%
     group_by(sentiment) %>%
     summarise(word_count = n()) %>%

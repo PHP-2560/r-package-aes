@@ -8,7 +8,9 @@
 #' clean_tweets()
 clean_tweets <- function(file) {
   
-  library(stringr)
+  source("check_packages.R")
+  check_packages("stringr")
+  
   tweets <- read.csv(file)
   tweets <- select(tweets, text)
   #Remove numbers
