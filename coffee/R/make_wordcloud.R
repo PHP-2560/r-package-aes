@@ -11,7 +11,7 @@
 make_wordcloud <- function(file, num_words = 100) {
   
   source("check_packages.R")
-  check_packages(c("tm", "SnowballC", "wordcloud2", "tidytext", "tidyr", "dplyr"))
+  check_packages(c("tm", "SnowballC", "wordcloud2", "tidytext", "tidyr", "dplyr", "wordcloud"))
   
   #Plot wordcloud of one word
   if (num_words == 1){
