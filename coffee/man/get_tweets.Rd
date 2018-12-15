@@ -9,7 +9,7 @@ get_tweets(keyword, num_tweets = 500)
 \arguments{
 \item{keyword}{A string that is the keyword included in tweets}
 
-\item{num_tweets}{The number of tweets to get, default is 1000}
+\item{num_tweets}{The number of tweets to get, default is 500}
 }
 \description{
 This function allows you to save tweets that contain a given keyword in a .csv file.
