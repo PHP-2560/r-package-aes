@@ -12,10 +12,10 @@ make_wordcloud <- function(file, num_words = 100) {
   source("check_packages.R")
   check_packages(c("tm", "SnowballC", "wordcloud2", "tidytext", "tidyr", "dplyr"))
   
-  tweets <- unnest_tokens(readr::read_csv("clean_starbucks_tweets.csv"), word, x)
+  tweets <- unnest_tokens(readr::read_csv(file), word, x)
   words <- tweets %>% count(word, sort=TRUE)
   words <- words %>% anti_join(stop_words)
-  wordcloud2(data=words[1:1,], color = "random-light")
+  wordcloud2(data=words[0:num_words,], color = "random-light")
   
 }
   
