@@ -7,15 +7,21 @@
 #' @export
 #' @examples
 #' make_wordcloud()
-make_wordcloud <- function(file, num_words = 100) {
-
-  source("check_packages.R")
-  check_packages(c("tm", "SnowballC", "wordcloud2", "tidytext", "tidyr", "dplyr"))
-  
-  tweets <- unnest_tokens(readr::read_csv("clean_starbucks_tweets.csv"), word, x)
-  words <- tweets %>% count(word, sort=TRUE)
-  words <- words %>% anti_join(stop_words)
-  wordcloud2(data=words[1:1,], color = "random-light")
-  
+make_wordcloud <- function(file, num_words) {
+  library(tm)
+  library(SnowballC)
+  library(wordcloud2)
+  library(wordcloud)
+  if (num_words == 1){
+    words <- read.csv(file)
+    corpus <- Corpus(VectorSource(words$x))
+    words <- tm_map(corpus, removeWords, stopwords("english"))
+    wordcloud(words, max.words = num_words, random.order = FALSE, random.color=FALSE, scale = c(4,0.5))
+  } else {
+    tweets <- unnest_tokens(readr::read_csv(file), word, x)
+    words1 <- tweets %>% count(word, sort=TRUE)
+    words1 <- words1 %>% anti_join(stop_words)
+    wordcloud2(data=words1[0:num_words,], color = "random-light")
+  }
 }
   
