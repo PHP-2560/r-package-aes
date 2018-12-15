@@ -1,13 +1,11 @@
 #' Making a Bar Graph
 #'
-#' This function allows you to make a bar graph given a .csv file.
-#' @param file A .csv file
+#' This function allows you to make a bar graph given a .csv file of clean tweets.
+#' @param file A .csv file as a string of clean tweets
 #' @keywords bargraph
 #' @export
 #' @examples
 #' make_bar_graph()
-#' 
-
 make_bar_graph <- function(file) {
   source("check_packages.R")
   check_packages(c("tidytext", "ggplot2", "dplyr"))

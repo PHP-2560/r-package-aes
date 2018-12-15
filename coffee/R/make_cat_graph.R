@@ -1,13 +1,11 @@
 #' Making a Bar Graph for each Sentiment.
 #'
 #' This function allows you to analyze word counts that contribute to each sentiment.
-#' @param file A .csv file
+#' @param file A .csv file as a string of clean tweets
 #' @keywords category graph
 #' @export
 #' @examples
 #' make_cat_graph()
-#' 
-
 make_cat_graph <- function(file) {
   source("check_packages.R")
   check_packages("tidytext")
