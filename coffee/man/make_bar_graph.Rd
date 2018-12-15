@@ -7,13 +7,12 @@
 make_bar_graph(file)
 }
 \arguments{
-\item{file}{A .csv file}
+\item{file}{A .csv file as a string of clean tweets}
 }
 \description{
-This function allows you to make a bar graph given a .csv file.
+This function allows you to make a bar graph given a .csv file of clean tweets.
 }
 \examples{
 make_bar_graph()
-
 }
 \keyword{bargraph}

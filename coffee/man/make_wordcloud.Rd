@@ -4,10 +4,10 @@
 \alias{make_wordcloud}
 \title{Making a Word Cloud}
 \usage{
-make_wordcloud(file, num_words)
+make_wordcloud(file, num_words = 100)
 }
 \arguments{
-\item{file}{A .csv file}
+\item{file}{A .csv file of clean tweets}
 
 \item{num_words}{The number of words in the word cloud, default is 100}
 }

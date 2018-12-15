@@ -7,14 +7,13 @@
 make_cat_graph(file)
 }
 \arguments{
-\item{file}{A .csv file}
+\item{file}{A .csv file as a string of clean tweets}
 }
 \description{
 This function allows you to analyze word counts that contribute to each sentiment.
 }
 \examples{
 make_cat_graph()
-
 }
 \keyword{category}
 \keyword{graph}
