@@ -2,7 +2,7 @@
 #'
 #' This function allows you to save tweets that contain a given keyword in a .csv file.
 #' @param keyword A string that is the keyword included in tweets
-#' @param num_tweets The number of tweets to get, default is 1000
+#' @param num_tweets The number of tweets to get, default is 500
 #' @keywords tweets
 #' @export keyword_tweets.csv A .csv of tweets containing the keyword
 #' @examples
