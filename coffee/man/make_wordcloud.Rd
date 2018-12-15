@@ -4,7 +4,7 @@
 \alias{make_wordcloud}
 \title{Making a Word Cloud}
 \usage{
-make_wordcloud(file, num_words)
+make_wordcloud(file, num_words = 1)
 }
 \arguments{
 \item{file}{A .csv file}
