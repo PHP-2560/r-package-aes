@@ -18,6 +18,6 @@ make_wordcloud <- function(file, num_words = 100) {
   #Remove stop works
   words <- words %>% anti_join(stop_words)
   #Create wordcloud
-  wordcloud2(data=words1[0:num_words,], color = "random-light")
+  wordcloud2(data=words[0:num_words,], color = "random-light")
 }
   
