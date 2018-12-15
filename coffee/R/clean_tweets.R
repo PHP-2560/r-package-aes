@@ -8,7 +8,6 @@
 #' clean_tweets()
 clean_tweets <- function(file) {
   
-  source("check_packages.R")
   check_packages("stringr")
   
   tweets <- read.csv(file)

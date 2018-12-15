@@ -7,7 +7,7 @@
 #' @examples
 #' make_cat_graph()
 make_cat_graph <- function(file) {
-  source("check_packages.R")
+  
   check_packages("tidytext")
   
   #Tokenize the tweets

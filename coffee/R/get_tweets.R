@@ -11,7 +11,6 @@
 
 get_tweets <- function(keyword, num_tweets = 500) {
 
-  source("check_packages.R")
   check_packages(c("twitteR", "dplyr", "purrr", "tidytext", "ROAuth", "httpuv", "openssl"))
   
   #Authentication information

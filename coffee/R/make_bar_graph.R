@@ -7,7 +7,7 @@
 #' @examples
 #' make_bar_graph()
 make_bar_graph <- function(file) {
-  source("check_packages.R")
+
   check_packages(c("tidytext", "ggplot2", "dplyr"))
   
   tweets_tidy <- unnest_tokens(readr::read_csv(file), word, x)
